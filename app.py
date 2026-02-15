@@ -8,7 +8,7 @@ import subprocess
 from openai import OpenAI
 
 # Perplexity AI API Key
-API_KEY = st.secrets["api_keys"]["wisdom_gate"]
+API_KEY = st.secrets["api_keys"]["perplexity"]
 
 # Constants for Requirement Spacing
 MAX_COLUMNS = 3  # Number of requirements per row
@@ -131,7 +131,7 @@ def generate_requirements_from_llm(prompt, client):
 
     try:
         response = client.chat.completions.create(
-            model="wisdom-ai-dsv3",
+            model="sonar-pro",
             messages=messages
         )
 
@@ -198,12 +198,8 @@ def main():
         st.session_state['gaphor_content'] = None  # Reset content
         st.session_state['previous_mode'] = mode   # Update the mode
 
-    client = OpenAI(api_key= API_KEY, base_url="https://wisdom-gate.juheapi.com/v1")
+    client = OpenAI(api_key= API_KEY, base_url="https://api.perplexity.ai")
 
-    # Inside the upload mode block
-    # Unified Edit/Delete/Add with Regenerate at once
-    # Unified Edit/Delete/Add with Summary and Regenerate at once
-    # Unified Edit/Delete/Add with Summary and Regenerate at once
     if mode == MODES["upload"]:
         st.header("Modify an Existing Gaphor Requirements File")
         uploaded_file = st.file_uploader("Upload your Gaphor (.gaphor) file", type=["gaphor", "xml"])
@@ -340,7 +336,7 @@ def main():
 
 
     if st.session_state.get('gaphor_content'):
-        with st.container():  # Ensures layout stability
+        with st.container():  
             col1, _ = st.columns(2)
             with col1:
                 st.download_button(

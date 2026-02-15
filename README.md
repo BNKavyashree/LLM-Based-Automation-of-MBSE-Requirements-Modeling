@@ -45,7 +45,7 @@ It automates:
 ### 1. Clone the Repository
 
 ```bash
-git clone [https://github.com/BNKavyashree/LLM-Based-Automation-of-MBSE-Requirements-Modeling.git]
+git clone https://github.com/BNKavyashree/LLM-Based-Automation-of-MBSE-Requirements-Modeling.git
 cd gaphor_with_llm
 ```
 
@@ -66,7 +66,19 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 4. Run the Streamlit App
+### 4. Set Up Perplexity API Key
+
+Create a `.streamlit/secrets.toml` file in your project directory:
+
+```toml
+[api_keys]
+perplexity = "your-perplexity-api-key-here"
+```
+
+Replace `your-perplexity-api-key-here` with your actual Perplexity API key from https://www.perplexity.ai/
+
+
+### 5. Run the Streamlit App
 
 ```bash
 streamlit run app.py
