@@ -2,6 +2,18 @@
 
 This project is a Streamlit-based web application that enables users to generate and edit concept-level requirements diagrams for Model-Based Systems Engineering (MBSE) — particularly for manufacturing systems. It integrates with Gaphor, a popular SysML/UML modeling tool, and supports multiple modes of requirement generation including manual input, AI-assisted creation using Perplexity, and uploading/modifying existing `.gaphor` files.
 
+## My Contributions
+
+ - Designed and iterated on **LLM prompt engineering** using Perplexity API to ensure structured JSON output following MBSE and ISO 15288 guidelines (limiting to 20 requirements, avoiding hallucinations and irrelevant details).
+ - Colloborated for implementing **JSON-to-Gaphor conversion logic** using Python (`uuid` for element IDs, `xmltodict` for XML generation) to translate LLM outputs into valid `.gaphor` files for SysML requirement diagrams.
+ - Developed the **Streamlit user interface** for natural language input and model generation workflow.
+
+## Links
+
+**Detailed Project Explanation:** https://kavyashreebn-en.carrd.co/#mbse  
+
+🎓 **University/Project:** Otto von Guericke University (OvGU) — Institute for Engineering of Products and Systems (IEPS)
+
 ## Description
 
 Creating high-quality MBSE models from scratch can be time-consuming and complex. This tool simplifies that process by leveraging large language models to assist engineers and system designers in building structured requirement diagrams aligned with ISO 15288 standards.
@@ -33,7 +45,7 @@ It automates:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/nitinbharadwajnataraj/gaphor_with_llm.git
+git clone [https://github.com/BNKavyashree/LLM-Based-Automation-of-MBSE-Requirements-Modeling.git]
 cd gaphor_with_llm
 ```
 
@@ -65,7 +77,7 @@ streamlit run app.py
 ## External Tools Required
 
 - Gaphor (for opening and visualizing `.gaphor` files): https://gaphor.org/
-- Perplexity API Key: https://www.perplexity.ai/ (already added in the code)
+- Perplexity API Key: https://www.perplexity.ai/ 
 
 ## Authors
 
